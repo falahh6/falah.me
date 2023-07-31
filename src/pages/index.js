@@ -1,9 +1,9 @@
 import "../pages.css";
 import Link from "next/link";
 
-export default function Home() {
+const Home = () => {
   return (
-    <main className="bg-black flex font-mono min-h-screen flex-col items-left justify-start p-32 gap-20">
+    <main className="bg-black flex font-mono min-h-screen flex-col items-left justify-start p-24 gap-20">
       <div className="flex justify-start flex-col">
         <h1 className="text-xl text-gray-50 pb-1">Mohammed falah</h1>
         <p className="text-gray-400 text-sm">
@@ -20,8 +20,8 @@ export default function Home() {
           building projects that address real-world challenges. I find joy in
           creating solutions through programming, much like what{" "}
           <span className="hover:border-b hover:border-solid hover:border-gray-500 pb-1">
-            <a href="https://www.codehex.tech">codehex </a>
-          </span>
+            <a href="https://www.codehex.tech">codehex</a>
+          </span>{" "}
           represents.
         </p>
       </div>
@@ -75,4 +75,6 @@ export default function Home() {
       </div>
     </main>
   );
-}
+};
+
+export default Home;
