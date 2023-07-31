@@ -1,11 +1,17 @@
-import "./pages/pages.css";
+import "../pages.css";
+import Link from "next/link";
 
 export default function Home() {
   return (
     <main className="bg-black flex font-mono min-h-screen flex-col items-left justify-start p-32 gap-20">
       <div className="flex justify-start flex-col">
         <h1 className="text-xl text-gray-50 pb-1">Mohammed falah</h1>
-        <p className="text-gray-400 text-sm">Front-end web developer</p>
+        <p className="text-gray-400 text-sm">
+          Front-end web developer{" "}
+          <span className="bg-red-100 p-1 rounded-md text-black brightness-50">
+            Open to work
+          </span>
+        </p>
       </div>
       <div className="">
         <h1 className="text-gray-50 pb-1">Today</h1>
@@ -28,7 +34,7 @@ export default function Home() {
               className="mt-4 p-2 pl-4 ml-[-1rem] text-gray-400 text-sm hover:bg-zinc-900 rounded-lg hover:cursor-pointer block"
               target="_blank"
             >
-              <h2 className="pb-1">codehex</h2>
+              <h2 className="pb-1">- codehex</h2>
               <p>An web based IDE powered by AI.</p>
             </a>
           </div>
@@ -38,7 +44,7 @@ export default function Home() {
               className="mt-4 p-2 pl-4 ml-[-1rem] text-gray-400 text-sm hover:bg-zinc-900 rounded-lg hover:cursor-pointer block"
               target="_blank"
             >
-              <h2 className="pb-1">NoteAble</h2>
+              <h2 className="pb-1">- NoteAble</h2>
               <p>
                 An web based note taking website with simple and user friendly
                 Interface.
@@ -46,6 +52,26 @@ export default function Home() {
             </a>
           </div>
         </div>
+      </div>
+      <div>
+        <h1 className="pb-1">More</h1>
+        <p className="text-gray-400 text-sm">
+          you can see more of my work on{" "}
+          <span className="hover:border-b hover:border-solid hover:border-gray-500 pb-1">
+            <a href="https://github.com/falahh6">GitHub</a>
+          </span>
+          ,{" "}
+          <span className="hover:border-b hover:border-solid hover:border-gray-500 pb-1">
+            <a href="https://twitter.com/ffalah_">Twitter(x)</a>
+          </span>{" "}
+          or you can{" "}
+          <Link
+            href={"/contact"}
+            className="hover:border-b hover:border-solid hover:border-gray-500 pb-1 hover:cursor-pointer"
+          >
+            Contact me.
+          </Link>
+        </p>
       </div>
     </main>
   );
