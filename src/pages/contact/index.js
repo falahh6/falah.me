@@ -83,7 +83,6 @@ const ContactPage = () => {
                 <Input
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  autoComplete={false}
                   required
                   type="email"
                   className="mt-1 max-md:p-2 max-md:text-xs bg-neutral-800 p-3 border-none text-gray-50 font-mono focus:shadow-lg "
