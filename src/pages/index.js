@@ -1,4 +1,4 @@
-import "../pages.css";
+// import "../pages.css";
 import Link from "next/link";
 import Head from "next/head";
 import { AnimatePresence, motion } from "framer-motion";

@@ -1,4 +1,5 @@
 import { Toaster } from "sonner";
+import "../pages.css";
 
 function MyApp({ Component, pageProps }) {
   return (

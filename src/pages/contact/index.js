@@ -1,4 +1,3 @@
-import "../../pages.css";
 import { useState } from "react";
 import { Input } from "antd";
 import { ChevronLeft } from "lucide-react";
