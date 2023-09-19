@@ -1,12 +1,11 @@
-import { Toaster } from "sonner";
+import { Provider } from "@/store/context";
 import "../pages.css";
 
 function MyApp({ Component, pageProps }) {
   return (
-    <>
-      {/* <Toaster duration={1000} richColors /> */}
+    <Provider>
       <Component {...pageProps} />
-    </>
+    </Provider>
   );
 }
 

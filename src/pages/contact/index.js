@@ -1,12 +1,13 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Input } from "antd";
-import { ChevronLeft } from "lucide-react";
+import { ChevronLeft, Moon, Sun } from "lucide-react";
 import Link from "next/link";
 import Head from "next/head";
 import { AnimatePresence, motion } from "framer-motion";
 import { createClient } from "@supabase/supabase-js";
 import { Toaster, toast } from "sonner";
 import LoadingOutlined from "@ant-design/icons/lib/icons/LoadingOutlined";
+import { MyContext } from "@/store/context";
 
 const supabase = createClient(
   "https://ksgioeqomxilujqhiydn.supabase.co",
@@ -45,6 +46,9 @@ const ContactPage = () => {
 
     setLoading(false);
   };
+
+  const { darkMode, moodSwitchHandler } = useContext(MyContext);
+
   return (
     <AnimatePresence>
       <motion.div
@@ -57,8 +61,24 @@ const ContactPage = () => {
           <title>contact me</title>
         </Head>
         <Toaster position="top-center" />
-        <main className="bg-black flex font-mono min-h-screen flex-col items-left justify-start p-24 gap-20 max-md:p-12 max-md:justify-center">
-          <p className="flex font-bold">
+        <main
+          className={`bg-${
+            darkMode ? "black" : "gray-50"
+          }  flex font-mono min-h-screen flex-col items-left justify-start p-24 gap-20 max-md:p-12 max-md:justify-center`}
+        >
+          <div
+            onClick={moodSwitchHandler}
+            className={`fixed bg-${
+              darkMode ? "white" : "black"
+            } right-8 bottom-8 p-1 rounded-full hover:cursor-pointer`}
+          >
+            {darkMode ? (
+              <Sun size={16} strokeWidth={2} color="black" />
+            ) : (
+              <Moon color="white" strokeWidth={2} size={16} />
+            )}
+          </div>
+          <p className={`flex text-bold text-${darkMode ? "white" : "black"}`}>
             {" "}
             <Link href={"/"} className="hover:cursor-pointer">
               {" "}
@@ -69,38 +89,62 @@ const ContactPage = () => {
           <form onSubmit={submitHandler}>
             <div className="grid gap-7 text-sm grid-cols-2 grid-rows-2 max-md:flex max-md:flex-col content-center">
               <div className="">
-                <label className="text-gray-500">Enter your name</label>
+                <label className={`text-gray-${darkMode ? "500" : "800"}`}>
+                  Enter your name
+                </label>
                 <Input
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   required
                   spellCheck={false}
-                  className="mt-1 bg-neutral-800 p-3 max-md:p-2 max-md:text-xs border-none text-gray-50 font-mono"
+                  className={`mt-1 ${
+                    darkMode ? "bg-neutral-800" : "bg-neutral-300"
+                  } p-3 max-md:p-2 max-md:text-xs border-none ${
+                    darkMode ? "text-gray-50" : "text-neutral-500"
+                  } font-mono focus:shadow-lg`}
                 />
               </div>
               <div className="">
-                <label className="text-gray-500">Enter your Email</label>
+                <label className={`text-gray-${darkMode ? "500" : "800"}`}>
+                  Enter your Email
+                </label>
                 <Input
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
                   type="email"
-                  className="mt-1 max-md:p-2 max-md:text-xs bg-neutral-800 p-3 border-none text-gray-50 font-mono focus:shadow-lg "
+                  className={`mt-1 max-md:p-2 max-md:text-xs ${
+                    darkMode ? "bg-neutral-800" : "bg-neutral-300"
+                  } p-3 border-none ${
+                    darkMode ? "text-gray-50" : "text-neutral-500"
+                  } font-mono focus:shadow-lg `}
                 />
               </div>
               <div className="col-span-2 mt-[-2.5rem] max-md:mt-1">
-                <label className="text-gray-500">Enter your Message</label>
+                <label className={`text-gray-${darkMode ? "500" : "800"}`}>
+                  Enter your Message
+                </label>
                 <TextArea
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   required
                   autoSize={false}
                   rows={5}
-                  className="mt-1  bg-neutral-800 p-3 border-none max-md:p-2 max-md:text-xs text-gray-50 font-mono "
+                  className={`mt-1 ${
+                    darkMode ? "bg-neutral-800" : "bg-neutral-300"
+                  } border-none max-md:p-2 max-md:text-xs ${
+                    darkMode ? "text-gray-50" : "text-neutral-500"
+                  } font-mono focus:shadow-lg `}
                 />
               </div>
             </div>
-            <button className="w-fit text-neutral-300 mt-7 text-sm  py-2 px-4 rounded-lg border-none  bg-neutral-800 hover:text-neutral-200 hover:bg-neutral-700 transition-all delay-100 ease-in-out flex items-center justify-between">
+            <button
+              className={`w-fit ${
+                darkMode ? "text-neutral-400" : "text-neutral-800"
+              } mt-7 text-sm  py-2 px-4 rounded-lg border-none  ${
+                darkMode ? "bg-neutral-800" : "bg-neutral-300"
+              } hover:text-neutral-200 hover:bg-neutral-700 transition-all delay-100 ease-in-out flex items-center justify-between`}
+            >
               {loading && <LoadingOutlined className="mr-2" />}
               Submit
             </button>

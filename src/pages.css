@@ -1,4 +1,4 @@
-@keyframes typing {
+/* @keyframes typing {
     from { width: 0; }
     to { width: 100%; }
   }
@@ -7,13 +7,13 @@
     overflow: hidden;
     white-space: nowrap; 
     animation: typing 5s steps(40)  ; 
-  }
+  } */
 
-  @tailwind base;
+@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
+/* :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
@@ -35,4 +35,4 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
-}
+} */
