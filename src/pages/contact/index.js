@@ -10,8 +10,8 @@ import LoadingOutlined from "@ant-design/icons/lib/icons/LoadingOutlined";
 import { MyContext } from "@/store/context";
 
 const supabase = createClient(
-  "https://ksgioeqomxilujqhiydn.supabase.co",
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtzZ2lvZXFvbXhpbHVqcWhpeWRuIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTA4NjcyMjIsImV4cCI6MjAwNjQ0MzIyMn0.e6Iy4F9PY9EmEnUeqa5fgf72sf7JSo7S0ZBfkle-ygQ"
+  process.env.NEXT_PUBLIC_SUPABASE_URL,
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
 );
 const ContactPage = () => {
   const { TextArea } = Input;

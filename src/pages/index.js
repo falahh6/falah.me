@@ -1,34 +1,34 @@
+"use client";
+
 import Link from "next/link";
 import Head from "next/head";
 import { AnimatePresence, motion } from "framer-motion";
 import { Moon, Sun } from "lucide-react";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { MyContext } from "@/store/context";
 const Home = () => {
   const { darkMode, moodSwitchHandler } = useContext(MyContext);
 
-  console.log(darkMode);
-
   return (
     <AnimatePresence>
       <motion.div
-        initial={{ opacity: 0 }}
+        initial={{ opacity: 1 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 1 }}
       >
         <Head>
-          <title>Mohammed falah</title>
+          <title>Mohammed Falah - Portfolio</title>
         </Head>
         <main
-          className={`bg-${
-            darkMode ? "black" : "gray-50"
+          className={`${
+            darkMode ? "bg-black" : "bg-gray-50"
           } flex font-mono min-h-screen flex-col items-left justify-start p-24 gap-20 max-md:gap-20 max-md:p-12 `}
         >
           <div
             onClick={moodSwitchHandler}
-            className={`fixed bg-${
-              darkMode ? "white" : "black"
+            className={`fixed ${
+              darkMode ? "bg-white" : "bg-black"
             } right-8 bottom-8 p-1 rounded-full hover:cursor-pointer`}
           >
             {darkMode ? (
@@ -39,13 +39,17 @@ const Home = () => {
           </div>
           <div className="flex justify-start flex-col">
             <h1
-              className={`text-xl text-${
-                darkMode ? "white" : "gray-800"
+              className={`text-xl ${
+                darkMode ? "text-white" : "text-gray-800"
               } pb-1 max-md:text-sm font-bold`}
             >
               Mohammed falah
             </h1>
-            <p className={`text-gray-${darkMode ? "400" : "500"} text-sm`}>
+            <p
+              className={`${
+                darkMode ? "text-gray-400" : "text-gray-500"
+              } text-sm`}
+            >
               Front-end web developer{" "}
               <a
                 href="https://drive.google.com/file/d/1pHulW3yEax3_89V7cOktu9ztgHMrjBk2/view?usp=sharing"
@@ -67,7 +71,11 @@ const Home = () => {
             >
               Today
             </h1>
-            <p className={`text-gray-${darkMode ? "400" : "500"} text-sm`}>
+            <p
+              className={`${
+                darkMode ? "text-gray-400" : "text-gray-500"
+              } text-sm`}
+            >
               I am a Computer Science Graduate, with a passion for building
               projects that address real-world challenges. I find joy in
               creating solutions through programming, much like what{" "}
@@ -79,8 +87,8 @@ const Home = () => {
           </div>
           <div>
             <h1
-              className={`text-${
-                darkMode ? "gray-50" : "black"
+              className={`${
+                darkMode ? "text-gray-50" : "text-black"
               } pb-1 max-md:text-sm font-bold`}
             >
               Projects
@@ -89,8 +97,8 @@ const Home = () => {
               <div>
                 <a
                   href="https://www.codehex.tech"
-                  className={`mt-4 p-2 pl-4 ml-[-1rem] max-md:mt-1 text-gray-${
-                    darkMode ? "400" : "500"
+                  className={`mt-4 p-2 pl-4 ml-[-1rem] max-md:mt-1 ${
+                    darkMode ? "text-gray-400" : "text-gray-500"
                   } text-sm hover:${
                     darkMode ? "brightness-50" : "brightness-50"
                   } rounded-lg hover:cursor-pointer block`}
@@ -103,8 +111,8 @@ const Home = () => {
               <div>
                 <a
                   href="https://nnoteable.netlify.app"
-                  className={`mt-4 p-2 pl-4 ml-[-1rem] max-md:mt-1 text-gray-${
-                    darkMode ? "400" : "500"
+                  className={`mt-4 p-2 pl-4 ml-[-1rem] max-md:mt-1 ${
+                    darkMode ? "text-gray-400" : "text-gray-500"
                   } text-sm hover:${
                     darkMode ? "brightness-50" : "brightness-50"
                   } rounded-lg hover:cursor-pointer block`}
@@ -121,13 +129,17 @@ const Home = () => {
           </div>
           <div>
             <h1
-              className={`text-${
-                darkMode ? "gray-50" : "black"
+              className={`${
+                darkMode ? "text-gray-50" : "text-black"
               } pb-1 max-md:text-sm font-bold`}
             >
               More
             </h1>
-            <p className={`text-gray-${darkMode ? "400" : "500"} text-sm`}>
+            <p
+              className={`${
+                darkMode ? "text-gray-400" : "text-gray-500"
+              } text-sm`}
+            >
               You can see more of my work on{" "}
               <span className="hover:border-b hover:border-solid hover:border-gray-500 pb-1">
                 <a href="https://github.com/falahh6">GitHub</a>
@@ -152,7 +164,7 @@ const Home = () => {
             </p>
           </div>
         </main>
-      </motion.div>
+      </motion.div>{" "}
     </AnimatePresence>
   );
 };
