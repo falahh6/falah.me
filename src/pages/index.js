@@ -6,6 +6,8 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Moon, Sun } from "lucide-react";
 import { useContext } from "react";
 import { MyContext } from "@/store/context";
+import { projects } from "@/lib/projects";
+import { socials } from "@/lib/socials";
 const Home = () => {
   const { darkMode, moodSwitchHandler } = useContext(MyContext);
 
@@ -52,7 +54,7 @@ const Home = () => {
             >
               Front-end web developer{" "}
               <a
-                href="https://drive.google.com/file/d/1pHulW3yEax3_89V7cOktu9ztgHMrjBk2/view?usp=sharing"
+                href="https://drive.google.com/file/d/15q2Shsx4RMrRNC2q0Gog-6DG_RlY8lgu/view?usp=sharing"
                 target="_blank"
                 className={
                   "bg-red-100 p-1 max-md:text-[8px] max-md:mb-[4px] rounded-md text-black brightness-50" +
@@ -94,37 +96,22 @@ const Home = () => {
               Projects
             </h1>
             <div>
-              <div>
-                <a
-                  href="https://www.codehex.tech"
-                  className={`mt-4 p-2 pl-4 ml-[-1rem] max-md:mt-1 ${
-                    darkMode ? "text-gray-400" : "text-gray-500"
-                  } text-sm hover:${
-                    darkMode ? "brightness-50" : "brightness-50"
-                  } rounded-lg hover:cursor-pointer block`}
-                  target="_blank"
-                >
-                  <h2 className="pb-1">- codehex</h2>
-                  <p>An web based IDE powered by AI.</p>
-                </a>
-              </div>
-              <div>
-                <a
-                  href="https://nnoteable.netlify.app"
-                  className={`mt-4 p-2 pl-4 ml-[-1rem] max-md:mt-1 ${
-                    darkMode ? "text-gray-400" : "text-gray-500"
-                  } text-sm hover:${
-                    darkMode ? "brightness-50" : "brightness-50"
-                  } rounded-lg hover:cursor-pointer block`}
-                  target="_blank"
-                >
-                  <h2 className="pb-1">- NoteAble</h2>
-                  <p>
-                    An web based note taking website with simple and user
-                    friendly Interface.
-                  </p>
-                </a>
-              </div>
+              {projects.map((project, index) => (
+                <div key={index}>
+                  <a
+                    href={project.link}
+                    className={`mt-4 p-2 pl-4 ml-[-1rem] max-md:mt-1 ${
+                      darkMode ? "text-gray-400" : "text-gray-500"
+                    } text-sm hover:${
+                      darkMode ? "brightness-50" : "brightness-50"
+                    } rounded-lg hover:cursor-pointer block`}
+                    target="_blank"
+                  >
+                    <h2 className="pb-1">- {project.name}</h2>
+                    <p>{project.description}</p>
+                  </a>
+                </div>
+              ))}
             </div>
           </div>
           <div>
