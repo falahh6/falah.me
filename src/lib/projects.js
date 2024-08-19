@@ -6,14 +6,9 @@ export const projects = [
     link: "https://docsyy.vercel.app",
   },
   {
-    name: "Codehex",
-    description: "An web based IDE powered by AI.",
-    link: "https://codehex.tech",
-  },
-  {
-    name: "Noteable",
-    description:
-      "An web based note taking website with simple and user friendly Interface.",
-    link: "https://nnoteable.netlify.app",
+    name: "Noteverse",
+    description: "A simple and sleek note taking app build with PlateJs.",
+    link: "https://nnoteverse.vercel.app",
+    building: true,
   },
 ];
