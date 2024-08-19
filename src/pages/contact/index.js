@@ -9,10 +9,10 @@ import { Toaster, toast } from "sonner";
 import LoadingOutlined from "@ant-design/icons/lib/icons/LoadingOutlined";
 import { MyContext } from "@/store/context";
 
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL,
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
-);
+// const supabase = createClient(
+//   process.env.NEXT_PUBLIC_SUPABASE_URL,
+//   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+// );
 const ContactPage = () => {
   const { TextArea } = Input;
 
@@ -23,28 +23,31 @@ const ContactPage = () => {
   const [loading, setLoading] = useState(false);
 
   const submitHandler = async (e) => {
-    setLoading(true);
     e.preventDefault();
+    setLoading(true);
 
-    try {
-      const { data, error } = await supabase
-        .from("Users")
-        .insert([
-          { id: Date.now(), name: name, email: email, message: message },
-        ])
-        .select();
+    // try {
+    //   const { data, error } = await supabase
+    //     .from("Users")
+    //     .insert([
+    //       { id: Date.now(), name: name, email: email, message: message },
+    //     ])
+    //     .select();
 
-      console.log(data);
+    //   console.log(data);
+    //   toast.success("Thankyou for contacting, expect the response shortly");
+    // } catch (error) {
+    //   console.log(error.message);
+    //   toast.error("cannot send a message, Please try again later");
+    // }
+
+    setTimeout(() => {
+      setName("");
+      setEmail("");
+      setMessage("");
       toast.success("Thankyou for contacting, expect the response shortly");
-    } catch (error) {
-      console.log(error.message);
-      toast.error("cannot send a message, Please try again later");
-    }
-    setName("");
-    setEmail("");
-    setMessage("");
-
-    setLoading(false);
+      setLoading(false);
+    }, 3000);
   };
 
   const { darkMode, moodSwitchHandler } = useContext(MyContext);

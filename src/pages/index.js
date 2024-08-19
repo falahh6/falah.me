@@ -7,7 +7,8 @@ import { Moon, Sun } from "lucide-react";
 import { useContext } from "react";
 import { MyContext } from "@/store/context";
 import { projects } from "@/lib/projects";
-import { socials } from "@/lib/socials";
+import Project from "@/components/Projects";
+
 const Home = () => {
   const { darkMode, moodSwitchHandler } = useContext(MyContext);
 
@@ -53,7 +54,7 @@ const Home = () => {
               } text-sm`}
             >
               Front-end web developer{" "}
-              <a
+              {/* <a
                 href="https://drive.google.com/file/d/15q2Shsx4RMrRNC2q0Gog-6DG_RlY8lgu/view?usp=sharing"
                 target="_blank"
                 className={
@@ -62,7 +63,7 @@ const Home = () => {
                 }
               >
                 Hire me
-              </a>
+              </a> */}
             </p>
           </div>
           <div className="">
@@ -78,11 +79,14 @@ const Home = () => {
                 darkMode ? "text-gray-400" : "text-gray-500"
               } text-sm`}
             >
-              I am a Computer Science Graduate, with a passion for building
-              projects that address real-world challenges. I find joy in
-              creating solutions through programming, much like what{" "}
-              <span className="hover:border-b hover:border-solid hover:border-gray-500 pb-1">
-                <a href="https://www.codehex.tech">codehex</a>
+              I am a Computer Science graduate, currently working at an AI based
+              coaching and mentoring re-enforcement startup. I&apos;m passionate
+              about building projects that address real-world challenges and
+              find joy in creating solutions through programming, much like what{" "}
+              <span className="border-b border-solid border-gray-500 pb-1">
+                <a target="_blank" href="https://docsyy.vercel.app/">
+                  docsy
+                </a>
               </span>{" "}
               represents.
             </p>
@@ -98,18 +102,7 @@ const Home = () => {
             <div>
               {projects.map((project, index) => (
                 <div key={index}>
-                  <a
-                    href={project.link}
-                    className={`mt-4 p-2 pl-4 ml-[-1rem] max-md:mt-1 ${
-                      darkMode ? "text-gray-400" : "text-gray-500"
-                    } text-sm hover:${
-                      darkMode ? "brightness-50" : "brightness-50"
-                    } rounded-lg hover:cursor-pointer block`}
-                    target="_blank"
-                  >
-                    <h2 className="pb-1">- {project.name}</h2>
-                    <p>{project.description}</p>
-                  </a>
+                  <Project project={project} darkMode={darkMode} />
                 </div>
               ))}
             </div>
