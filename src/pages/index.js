@@ -19,6 +19,7 @@ const Home = () => {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 1 }}
+        className="bg-black"
       >
         <Head>
           <title>Mohammed Falah - Portfolio</title>
@@ -79,16 +80,16 @@ const Home = () => {
                 darkMode ? "text-gray-400" : "text-gray-500"
               } text-sm`}
             >
-              I am a Computer Science graduate, currently working at an AI based
-              coaching and mentoring re-enforcement startup. I&apos;m passionate
-              about building projects that address real-world challenges and
-              find joy in creating solutions through programming, much like what{" "}
-              <span className="border-b border-solid border-gray-500 pb-1">
-                <a target="_blank" href="https://docsyy.vercel.app/">
-                  docsy
+              I am a Computer Applications graduate, currently working at an
+              AI-based coaching and mentoring startup. I'm passionate about
+              building projects that solve real-world problems and enjoy
+              creating impactful solutions through coding—just like my work on{" "}
+              <span className="border-b border-solid border-gray-500 pb-">
+                <a target="_blank" href="https://nnoteverse.vercel.app/">
+                  Noteverse,
                 </a>
               </span>{" "}
-              represents.
+              a platform for sharing and engaging with notes in real-time.
             </p>
           </div>
           <div>
