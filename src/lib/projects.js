@@ -9,7 +9,7 @@ export const projects = [
   {
     name: "Noteverse",
     description: "A simple and sleek note taking app build with PlateJs.",
-    link: "https://nnoteverse.vercel.app",
+    link: "https://nnoteverse.vercel.app?authCode=pepperonipizza",
     building: true,
     github: "https://github.com/falahh6/noteverse-frontend",
   },
