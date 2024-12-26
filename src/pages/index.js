@@ -8,6 +8,8 @@ import { useContext } from "react";
 import { MyContext } from "@/store/context";
 import { projects } from "@/lib/projects";
 import Project from "@/components/Projects";
+import { workExperience } from "@/lib/work";
+import Experience from "@/components/WorkExperience";
 
 const Home = () => {
   const { darkMode, moodSwitchHandler } = useContext(MyContext);
@@ -54,9 +56,9 @@ const Home = () => {
                 darkMode ? "text-gray-400" : "text-gray-500"
               } text-sm`}
             >
-              Front-end web developer{" "}
-              {/* <a
-                href="https://drive.google.com/file/d/15q2Shsx4RMrRNC2q0Gog-6DG_RlY8lgu/view?usp=sharing"
+              Front-end Engineer{" "}
+              <a
+                href="https://drive.google.com/file/d/1H6qlE2z1YLH0dI5ZHNf6ZBveCFMpYmg9/view?usp=sharing"
                 target="_blank"
                 className={
                   "bg-red-100 p-1 max-md:text-[8px] max-md:mb-[4px] rounded-md text-black brightness-50" +
@@ -64,7 +66,7 @@ const Home = () => {
                 }
               >
                 Hire me
-              </a> */}
+              </a>
             </p>
           </div>
           <div className="">
@@ -76,21 +78,37 @@ const Home = () => {
               Today
             </h1>
             <p
-              className={`${
+              className={`mt-4 ${
                 darkMode ? "text-gray-400" : "text-gray-500"
               } text-sm`}
             >
-              I am a Computer Applications graduate, currently working at an
-              AI-based coaching and mentoring startup. I'm passionate about
-              building projects that solve real-world problems and enjoy
-              creating impactful solutions through coding—just like my work on{" "}
-              <span className="border-b border-solid border-gray-500 pb-">
-                <a target="_blank" href="https://nnoteverse.vercel.app/">
-                  Noteverse,
-                </a>
-              </span>{" "}
-              a platform for sharing and engaging with notes in real-time.
+              I'm a Computer Applications graduate working at an AI-based
+              coaching startup. I love building real-world solutions, like{" "}
+              <a
+                className="border-b border-solid border-gray-500"
+                target="_blank"
+                href="https://nnoteverse.vercel.app/"
+              >
+                Noteverse
+              </a>
+              , a platform for real-time note sharing and engagement.
             </p>
+          </div>
+          <div>
+            <h1
+              className={`${
+                darkMode ? "text-gray-50" : "text-black"
+              } pb-1 max-md:text-sm font-bold`}
+            >
+              Work
+            </h1>
+            <div>
+              {workExperience.map((project, index) => (
+                <div key={index}>
+                  <Experience experience={project} darkMode={darkMode} />
+                </div>
+              ))}
+            </div>
           </div>
           <div>
             <h1
