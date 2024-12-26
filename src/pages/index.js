@@ -150,10 +150,10 @@ const Home = () => {
               ,{" "}
               <span className="hover:border-b hover:border-solid hover:border-gray-500 pb-1">
                 <a href="https://www.linkedin.com/in/mohammed-falah-a4a4b0223/">
-                  LinkedIn
+                  LinkedIn.
                 </a>
               </span>{" "}
-              or you can{" "}
+              {/* or you can{" "} */}
               {/* <Link
                 href={"/contact"}
                 className="hover:border-b hover:border-solid hover:border-gray-500 pb-1 hover:cursor-pointer"
