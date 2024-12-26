@@ -154,12 +154,12 @@ const Home = () => {
                 </a>
               </span>{" "}
               or you can{" "}
-              <Link
+              {/* <Link
                 href={"/contact"}
                 className="hover:border-b hover:border-solid hover:border-gray-500 pb-1 hover:cursor-pointer"
               >
                 Contact me.
-              </Link>
+              </Link> */}
             </p>
           </div>
         </main>
