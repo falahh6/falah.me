@@ -13,7 +13,7 @@ const Project = ({ project, darkMode }) => {
           - {project.name}{" "}
           {project.building && (
             <span
-              className={`text-xs text-gray-600 bg-gray-100 px-1 p-0.5 rounded-md ${
+              className={`text-xs text-gray-600 bg-gray-100 px-1 p-0.5 rounded-md border ${
                 !darkMode && "group-hover:bg-transparent"
               }`}
             >
