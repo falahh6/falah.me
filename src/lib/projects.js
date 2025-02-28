@@ -1,5 +1,13 @@
 export const projects = [
   {
+    name: "Droppy",
+    description:
+      "The Apple airdrop alternative on browser for devices connected to the same network",
+    link: "http://droppy.falah.in",
+    building: true,
+    github: "https://github.com/falahh6/droppy",
+  },
+  {
     name: "Sendly",
     description: "A new way of how you work with your emails.",
     link: "https://sendly.falah.in",
