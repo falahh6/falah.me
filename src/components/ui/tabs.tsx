@@ -54,7 +54,7 @@ export const Tabs = ({
             onMouseEnter={() => setHovering(true)}
             onMouseLeave={() => setHovering(false)}
             className={cn(
-              "relative px-3 py-1 text-sm font-medium rounded-full hover:cursor-pointer hover:bg-zinc-100 dark:hover:bg-zinc-900",
+              "relative px-3 py-1 mx-2 text-sm font-medium rounded-full hover:cursor-pointer hover:bg-zinc-100 dark:hover:bg-zinc-900",
               tabClassName
             )}
             style={{
