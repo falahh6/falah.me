@@ -40,7 +40,7 @@ const Header = () => {
         </div>
         <div className="flex flex-row gap-2 items-center pt-2">
           <Button
-            className="text-xs h-fit p-1"
+            className="text-xs h-fit p-1 group hover:shadow"
             variant={"outline"}
             size={"sm"}
             asChild
@@ -51,13 +51,13 @@ const Header = () => {
                   height: "10px",
                   width: "10px",
                 }}
-                className="h-3 w-3"
+                className="h-3 w-3 group-hover:animate-pulse"
               />
               <span className="hidden md:block"> @falahh_</span>
             </Link>
           </Button>
           <Button
-            className="text-xs h-fit p-1"
+            className="text-xs h-fit p-1 group hover:shadow"
             variant={"outline"}
             size={"sm"}
             asChild
@@ -68,7 +68,7 @@ const Header = () => {
                   height: "12px",
                   width: "12px",
                 }}
-                className="h-3 w-3"
+                className="h-3 w-3 group-hover:animate-pulse"
               />
               <span className="hidden md:block">@falahh6</span>
             </Link>

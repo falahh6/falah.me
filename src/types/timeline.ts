@@ -3,7 +3,7 @@ export interface SubProject {
   description: string;
   technologies: string[];
   link?: string;
-  image?: string;
+  images?: string[]; // Updated from 'image' to 'images' to support multiple images
 }
 
 export interface TimelineEntry {
@@ -12,4 +12,7 @@ export interface TimelineEntry {
   details: string;
   institutionCompany?: string;
   subProjects?: SubProject[];
+  type?: "education" | "work" | "project";
+  productHuntLink?: string; // Added field for Product Hunt link
+  images?: string[]; // Added field for project-level images
 }

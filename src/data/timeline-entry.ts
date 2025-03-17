@@ -2,38 +2,30 @@ import { TimelineEntry } from "../types/timeline";
 
 export const timelineData: TimelineEntry[] = [
   {
-    period: "August 2020",
-    title: "PUC Commerce",
+    period: "January 25, 2025",
+    title: "Droppy",
+    type: "project",
     details:
-      "Completed pre-university education in Commerce, setting the stage for my technical journey.",
-    institutionCompany: "Dr. AV Baliga College of Commerce, Kumta, Karnataka",
-  },
-  {
-    period: "September 2020 - September 2023",
-    title: "Bachelors of Computer Applications (BCA)",
-    details:
-      "Graduated with a CGPA of 8.425. Studied HTML, CSS, JavaScript, and ReactJS. Active in the Student Dev Club.",
-    institutionCompany: "ALMCA, Bhatkal",
-  },
-  {
-    period: "December 2022 - January 2023",
-    title: "Front-end Web Developer Intern",
-    details:
-      "Documented requirements, converted designs to interactive UIs, and updated websites while learning modern frontend tools.",
-    institutionCompany: "Abeefor Co, Bhatkal, Karnataka",
-  },
-  {
-    period: "September 2023",
-    title: "Project: Portfolio",
-    details:
-      "Built a personal portfolio site to showcase skills and projects, likely with Next.js and TailwindCSS.",
+      "A browser-based file/text sharing tool for local networks, ranked #11 on Product Hunt, with 1,900+ X impressions.",
+    productHuntLink: "https://www.producthunt.com/posts/droppy",
+    subProjects: [
+      {
+        title: "Droppy",
+        description:
+          "A browser-based file/text sharing tool for local networks, ranked #11 on Product Hunt.",
+        technologies: ["NextJS", "TailwindCSS", "Shadcn-ui", "WebSockets"],
+        link: "https://droppy.falab.in",
+        images: ["https://droppy.falab.in/screenshot1.png"],
+      },
+    ],
   },
   {
     period: "November 2023 - Present",
-    title: "Front-end Web Engineer",
+    title: "Frontend Web Engineer",
     details:
       "Sole frontend developer, contributing to 800+ tasks, 300+ PRs, and 700+ commits across three key projects.",
     institutionCompany: "Coachbots.com (Remote)",
+    type: "work",
     subProjects: [
       {
         title: "SaaS Platform for Coaching and Mentoring",
@@ -47,7 +39,7 @@ export const timelineData: TimelineEntry[] = [
           "OpenAI API",
         ],
         link: "",
-        image: "",
+        images: [],
       },
       {
         title: "Report UI System",
@@ -55,7 +47,7 @@ export const timelineData: TimelineEntry[] = [
           "Created a Notion-like document UI for the reporting system, featuring analytics and a polished interface.",
         technologies: ["Next.js", "TailwindCSS"],
         link: "",
-        image: "",
+        images: [],
       },
       {
         title: "Internal Chatbot Unit",
@@ -63,15 +55,17 @@ export const timelineData: TimelineEntry[] = [
           "Designed and built a chatbot UI and dashboard for internal use, trained on specific topics, consuming OpenAI Assistant and various LLMs.",
         technologies: ["Next.js", "TailwindCSS", "OpenAI Assistant API"],
         link: "",
-        image: "",
+        images: [],
       },
     ],
   },
   {
-    period: "2024 (Exact Date TBD)",
-    title: "Project: Noteverse",
+    period: "November 2024",
+    title: "Noteverse",
     details:
       "A real-time notes app with upvoting, commenting, and personalized recommendations.",
+    type: "project",
+    productHuntLink: "",
     subProjects: [
       {
         title: "Noteverse",
@@ -87,22 +81,25 @@ export const timelineData: TimelineEntry[] = [
           "NeonDB",
         ],
         link: "https://noteverse.falab.in",
+        images: ["https://noteverse.falab.in/screenshot1.png"],
       },
     ],
   },
+
   {
-    period: "January 25, 2025",
-    title: "Project: Droppy",
+    period: "December 2022 - January 2023",
+    title: "Frontend Web Developer Intern",
     details:
-      "A browser-based file/text sharing tool for local networks, ranked #11 on Product Hunt, with 1,900+ X impressions.",
-    subProjects: [
-      {
-        title: "Droppy",
-        description:
-          "A browser-based file/text sharing tool for local networks, ranked #11 on Product Hunt.",
-        technologies: ["NextJS", "TailwindCSS", "Shadcn-ui", "WebSockets"],
-        link: "https://droppy.falab.in",
-      },
-    ],
+      "Documented requirements, converted designs to interactive UIs, and updated websites while learning modern frontend tools.",
+    institutionCompany: "Abeefor Co, Bhatkal, Karnataka",
+    type: "work",
+  },
+  {
+    period: "September 2020 - September 2023",
+    title: "Bachelors of Computer Applications (BCA)",
+    details:
+      "Graduated with a CGPA of 8.425. Studied HTML, CSS, JavaScript, and ReactJS. Active in the Student Dev Club.",
+    institutionCompany: "ALMCA, Bhatkal",
+    type: "education",
   },
 ];
