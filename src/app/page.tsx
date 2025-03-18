@@ -3,7 +3,7 @@
 import Header from "@/components/header";
 import MarginWrapper from "@/components/margin-wrapper";
 import { timelineData } from "@/data/timeline-entry";
-import { ArrowUpRight, Briefcase, Building2, School } from "lucide-react";
+import { ArrowRight, Briefcase, Building2, School } from "lucide-react";
 
 import {
   Accordion,
@@ -53,9 +53,9 @@ export default function Home() {
                             href={`/about?project=${entry.title}`}
                             className=""
                           >
-                            <p className="text-xs group font-semibold flex w-fit flex-row items-center justify-between gap-2 hover:text-foreground/60 hover:cursor-pointer border-b pb-1">
+                            <p className="text-xs group font-semibold flex w-fit flex-row items-center justify-between gap-2 hover:text-foreground/60 hover:cursor-pointer">
                               <span>Read more</span>
-                              <ArrowUpRight className="h-4 w-4 transition-all group-hover:-translate-0.5" />
+                              <ArrowRight className="h-4 w-4 transition-all group-hover:translate-x-1" />
                             </p>
                           </Link>
                         )}

@@ -7,7 +7,7 @@ import { Dot, FileText } from "lucide-react";
 
 const Header = () => {
   return (
-    <header className="w-full flex flex-row gap-8 lg:p-4  text-zinc-600 dark:text-zinc-400">
+    <header className="w-full flex flex-row gap-8 lg:p-4">
       <div className="border min-w-[120px] border-zinc-200 dark:border-zinc-700 bg-white dark:bg-black rounded-xl p-2 shadow-2xl h-fit hover:-translate-y-1 transition-all">
         <Image
           src={"/falah.jpeg"}
@@ -20,7 +20,7 @@ const Header = () => {
       <div className="text-left space-y-1">
         <h1 className="text-xl font-semibold">Mohammed Falah</h1>
         <h3 className="text-sm font-semibold">Frontend Engineer</h3>
-        <div className="text-xs md:text-sm">
+        <div className="text-xs md:text-sm text-muted-foreground">
           I&apos;m a BCA graduate working at an AI-based coaching and mentoring
           SaaS startup. I love building real-world solutions, like{" "}
           <Link
@@ -38,7 +38,7 @@ const Header = () => {
           </Link>{" "}
           An apple alternative on browsers for devices on same network.
         </div>
-        <div className="flex flex-row gap-2 items-center pt-2">
+        <div className="flex flex-row gap-2 items-center pt-2 text-foreground/80">
           <Button
             className="text-xs h-fit p-1 group hover:shadow"
             variant={"outline"}

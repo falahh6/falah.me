@@ -1,10 +1,11 @@
+"use client";
+
 import Link from "next/link";
+import { Button } from "./ui/button";
+import { Separator } from "./ui/separator";
 import { Home } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
-
-export default function ProjectNotFound() {
+export const NotFound = () => {
   return (
     <div className="max-w-3xl mx-auto px-4 py-8 text-zinc-600 dark:text-zinc-400">
       <div className="mb-16">
@@ -12,7 +13,6 @@ export default function ProjectNotFound() {
           <div className="w-20 h-20 rounded-full overflow-hidden mb-4 flex items-center justify-center bg-accent">
             <span className="text-2xl font-bold text-card-foreground">404</span>
           </div>
-          <h1 className="text-2xl font-medium mb-1">Project Not Found</h1>
           <p className="text-base mb-2">
             We couldn&apos;t find the project you&apos;re looking for
           </p>
@@ -42,11 +42,7 @@ export default function ProjectNotFound() {
             </Link>
           </Button>
         </div>
-
-        <footer className="text-center text-xs pt-4 border-t">
-          <p>© {new Date().getFullYear()} Noteverse. All rights reserved.</p>
-        </footer>
       </div>
     </div>
   );
-}
+};

@@ -6,6 +6,8 @@ import { Badge } from "@/components/ui/badge";
 import { projectData } from "@/data/projects";
 import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
+import { Carousel } from "@/components/ui/carousel";
+import { NotFound } from "@/components/notfound";
 
 const ProjectsPage = async ({
   searchParams,
@@ -15,7 +17,13 @@ const ProjectsPage = async ({
   const params = await searchParams;
   const projectTitle = params.project as string;
 
-  const project = projectData.find((p) => p.title === projectTitle);
+  if (!projectTitle) {
+    return <NotFound />;
+  }
+
+  const project = projectData.find(
+    (p) => p.title.toLowerCase() === projectTitle.toLowerCase()
+  );
 
   return (
     <div className="max-w-3xl mx-auto px-4 py-8 text-zinc-600 dark:text-zinc-400">
@@ -84,7 +92,7 @@ const ProjectsPage = async ({
           <Separator className="my-8" />
 
           <div className="mb-8">
-            <h2 className="text-base font-medium mb-4">Highlights</h2>
+            <h2 className="text-base font-semibold mb-4">Highlights</h2>
             {project.highlights.map((highlight, index) => (
               <div key={index} className="mb-6 text-sm">
                 <div className="flex justify-between items-start mb-2">
@@ -96,7 +104,7 @@ const ProjectsPage = async ({
           </div>
 
           <div className="mb-8">
-            <h2 className="text-base font-medium mb-4">Technology Stack</h2>
+            <h2 className="text-base font-semibold mb-4">Technology Stack</h2>
             <div className="flex flex-wrap gap-2">
               {project.techStack.map((tech) => (
                 <Badge
@@ -110,20 +118,15 @@ const ProjectsPage = async ({
             </div>
           </div>
 
-          <div className="mb-8">
-            <h2 className="text-base font-medium mb-4">Screenshots</h2>
-            <Image
-              src={project.screenshot}
-              alt={project.title}
-              width={800}
-              height={400}
-              className="w-full h-auto"
-            />
-          </div>
+          {project.slidesData.length > 0 && (
+            <div className="mb-10 overflow-clip">
+              <h2 className="text-base font-semibold">Screenshots</h2>
+              <Carousel screenshots={project.slidesData} />
+            </div>
+          )}
 
-          {/* About */}
           <div className="mb-8">
-            <h2 className="text-base font-medium mb-4">About</h2>
+            <h2 className="text-base font-semibold mb-4">About</h2>
             <div className="space-y-3 text-sm">
               {project.about.map((paragraph, index) => (
                 <p key={index}>{paragraph}</p>
@@ -131,7 +134,6 @@ const ProjectsPage = async ({
             </div>
           </div>
 
-          {/* Call to Action */}
           <div className="text-center py-6 px-4 bg-accent rounded-lg mb-8">
             <h3 className="text-base font-medium mb-2">
               Ready to get started?
@@ -141,17 +143,17 @@ const ProjectsPage = async ({
               asChild
               size="sm"
               variant={"outline"}
-              className="px-4 text-xs"
+              className="px-4 text-xs group"
             >
               <Link target="_blank" href={project.callToAction.buttonLink}>
                 {project.callToAction.buttonText}{" "}
-                <ArrowRight className="ml-1 h-3 w-3" />
+                <ArrowRight className="h-3 w-3 group-hover:translate-x-1 transition-[translate]" />
               </Link>
             </Button>
           </div>
 
           <footer className="text-center text-xs pt-4 border-t">
-            <p>© {new Date().getFullYear()} Noteverse. All rights reserved.</p>
+            <p>{project.footer}</p>
           </footer>
         </div>
       )}

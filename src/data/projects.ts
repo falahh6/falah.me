@@ -12,7 +12,13 @@ export type Project = {
     description: string;
   }[];
   techStack: string[];
-  screenshot: string;
+  slidesData: {
+    id: number;
+    title: string;
+    description: string;
+    imageUrl: string;
+  }[];
+
   about: string[];
   callToAction: {
     text: string;
@@ -58,7 +64,44 @@ export const projectData: Project[] = [
       "Prisma ORM",
       "NeonDB",
     ],
-    screenshot: "/placeholder.svg?height=400&width=800",
+    slidesData: [
+      {
+        id: 1,
+        title: "Landing Page",
+        description: "The landing page of Noteverse",
+        imageUrl: "/assets/noteverse/landing.png",
+      },
+      {
+        id: 2,
+        title: "Login Page",
+        description: "The login page of Noteverse",
+        imageUrl: "/assets/noteverse/login.png",
+      },
+      {
+        id: 3,
+        title: "Dashboard",
+        description: "The dashboard of Noteverse",
+        imageUrl: "/assets/noteverse/dashboard.png",
+      },
+      {
+        id: 4,
+        title: "Notes Page",
+        description: "The notes page of Noteverse",
+        imageUrl: "/assets/noteverse/notes.png",
+      },
+      {
+        id: 5,
+        title: "Share",
+        description: "The share modal of Noteverse",
+        imageUrl: "/assets/noteverse/share.png",
+      },
+      {
+        id: 6,
+        title: "Comments",
+        description: "The comments section of Noteverse",
+        imageUrl: "/assets/noteverse/comments.png",
+      },
+    ],
     about: [
       "Noteverse is a modern note-taking application designed for collaboration and knowledge sharing. It combines the simplicity of traditional note apps with powerful social features that help you discover and engage with valuable content.",
       "Whether you're a student, professional, or creative thinker, Noteverse provides a seamless environment to capture your ideas and connect with others who share your interests.",
@@ -83,16 +126,36 @@ export const projectData: Project[] = [
     },
     highlights: [
       {
-        title: "Product Hunt Success",
+        title: "Peer Connections",
         description:
-          "Ranked #11 on Product Hunt with 1,900+ impressions, showcasing its popularity and utility.",
+          "Connect with other devices on the same network and share files or text messages.",
+      },
+      {
+        title: "Share Files and Long form messages",
+        description:
+          "Send files and text messages to connected peers with ease.",
       },
     ],
     techStack: ["NextJS", "TailwindCSS", "Shadcn-ui", "WebSockets"],
-    screenshot: "",
+    slidesData: [
+      {
+        id: 1,
+        title: "Peers connections",
+        description: "This is how the connected and discovered peers look like",
+        imageUrl: "/assets/droppy/droppy.png",
+      },
+      {
+        id: 2,
+        title: "The modal",
+        description:
+          "The modal where you can either send a file or a text message",
+        imageUrl: "/assets/droppy/droppy-modal.png",
+      },
+    ],
     about: [
-      "Droppy is a browser-based file and text sharing tool designed for local networks. It allows users to share files and messages seamlessly without requiring external servers.",
-      "The app is lightweight, fast, and secure, making it ideal for quick file transfers in local environments.",
+      "Droppy is a Apple airdrop alternative on browsers for the devices that are connected to the same internet connection.",
+      "It allows users to share files and text messages with each other without the need for any external software or services.",
+      "Built using websocket, the app is feels lightweight, fast, and secure, making it ideal for quick file transfers in local environments.",
     ],
     callToAction: {
       text: "Experience seamless file sharing with Droppy.",
