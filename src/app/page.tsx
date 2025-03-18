@@ -3,7 +3,7 @@
 import Header from "@/components/header";
 import MarginWrapper from "@/components/margin-wrapper";
 import { timelineData } from "@/data/timeline-entry";
-import { Briefcase, Building2, School } from "lucide-react";
+import { ArrowUpRight, Briefcase, Building2, School } from "lucide-react";
 
 import {
   Accordion,
@@ -11,6 +11,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -34,7 +35,7 @@ export default function Home() {
                     <div className="flex flex-row max-sm:flex-col max-sm:items-start items-center justify-between gap-2 w-full ">
                       <div className="flex flex-row items-center justify-between gap-2 w-full">
                         <p>{entry.title}</p>
-                        <p className="text-foreground/50 text-xs">
+                        <p className="text-foreground/50 text-xs max-sm:text-right">
                           {entry.period}
                         </p>
                       </div>
@@ -45,6 +46,20 @@ export default function Home() {
                   </AccordionTrigger>
                   <AccordionContent className="text-muted-foreground ps-7 pb-2">
                     {entry.details}
+                    <div className="py-2">
+                      {entry.type === "project" &&
+                        entry.subProjects.length > 0 && (
+                          <Link
+                            href={`/about?project=${entry.title}`}
+                            className=""
+                          >
+                            <p className="text-xs group font-semibold flex w-fit flex-row items-center justify-between gap-2 hover:text-foreground/60 hover:cursor-pointer border-b pb-1">
+                              <span>Read more</span>
+                              <ArrowUpRight className="h-4 w-4 transition-all group-hover:-translate-0.5" />
+                            </p>
+                          </Link>
+                        )}
+                    </div>
                   </AccordionContent>
                 </AccordionItem>
               ))}
@@ -52,7 +67,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="h-full bg-red-100"></div>
     </MarginWrapper>
   );
 }

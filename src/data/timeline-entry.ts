@@ -6,15 +6,15 @@ export const timelineData: TimelineEntry[] = [
     title: "Droppy",
     type: "project",
     details:
-      "A browser-based file/text sharing tool for local networks, ranked #11 on Product Hunt, with 1,900+ X impressions.",
+      "An apple alternative on browser for devices connected to the same internet connection, ranked #11 on Product Hunt, with 1,900+ X impressions.",
     productHuntLink: "https://www.producthunt.com/posts/droppy",
     subProjects: [
       {
         title: "Droppy",
         description:
-          "A browser-based file/text sharing tool for local networks, ranked #11 on Product Hunt.",
+          "An apple alternative on browser for devices connected to the same internet connection, ranked #11 on Product Hunt, with 1,900+ X impressions.",
         technologies: ["NextJS", "TailwindCSS", "Shadcn-ui", "WebSockets"],
-        link: "https://droppy.falab.in",
+        link: "https://droppy.falah.in",
         images: ["https://droppy.falab.in/screenshot1.png"],
       },
     ],
@@ -80,7 +80,7 @@ export const timelineData: TimelineEntry[] = [
           "Prisma ORM",
           "NeonDB",
         ],
-        link: "https://noteverse.falab.in",
+        link: "https://noteverse.falah.in",
         images: ["https://noteverse.falab.in/screenshot1.png"],
       },
     ],
@@ -93,6 +93,7 @@ export const timelineData: TimelineEntry[] = [
       "Documented requirements, converted designs to interactive UIs, and updated websites while learning modern frontend tools.",
     institutionCompany: "Abeefor Co, Bhatkal, Karnataka",
     type: "work",
+    subProjects: [],
   },
   {
     period: "September 2020 - September 2023",
@@ -101,5 +102,6 @@ export const timelineData: TimelineEntry[] = [
       "Graduated with a CGPA of 8.425. Studied HTML, CSS, JavaScript, and ReactJS. Active in the Student Dev Club.",
     institutionCompany: "ALMCA, Bhatkal",
     type: "education",
+    subProjects: [],
   },
 ];

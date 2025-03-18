@@ -11,7 +11,7 @@ export interface TimelineEntry {
   title: string;
   details: string;
   institutionCompany?: string;
-  subProjects?: SubProject[];
+  subProjects: SubProject[];
   type?: "education" | "work" | "project";
   productHuntLink?: string; // Added field for Product Hunt link
   images?: string[]; // Added field for project-level images
