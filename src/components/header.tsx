@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { LinkPreview } from "./ui/link-preview";
 import { Icons } from "./ui/icons";
 import { Button } from "./ui/button";
 import { Dot, FileText } from "lucide-react";
@@ -23,13 +22,13 @@ const Header = () => {
         <div className="text-xs md:text-sm text-muted-foreground">
           I&apos;m a BCA graduate working at an AI-based coaching and mentoring
           SaaS startup. I love building real-world solutions, like{" "}
-          <LinkPreview
-            linkTarget="_blank"
-            url="https://droppy.falah.in"
+          <Link
+            href={"https://droppy.falah.in"}
+            target="_blank"
             className="font-semibold p-0.5 px-1 hover:border-b"
           >
             Droppy
-          </LinkPreview>
+          </Link>
           .
         </div>
         <div className="flex flex-row gap-2 items-center pt-2 text-foreground/80">
