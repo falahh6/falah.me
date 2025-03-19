@@ -24,7 +24,7 @@ export const timelineData: TimelineEntry[] = [
     title: "Frontend Web Engineer",
     details:
       "Sole frontend developer, contributing to 800+ tasks, 300+ PRs, and 700+ commits across three key projects.",
-    institutionCompany: "Coachbots.com (Remote)",
+    institutionCompany: "Coachbots.com",
     type: "work",
     subProjects: [
       {
@@ -91,7 +91,7 @@ export const timelineData: TimelineEntry[] = [
     title: "Frontend Web Developer Intern",
     details:
       "Documented requirements, converted designs to interactive UIs, and updated websites while learning modern frontend tools.",
-    institutionCompany: "Abeefor Co, Bhatkal, Karnataka",
+    institutionCompany: "AkeefandCo",
     type: "work",
     subProjects: [],
   },

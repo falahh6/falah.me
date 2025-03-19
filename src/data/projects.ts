@@ -18,7 +18,6 @@ export type Project = {
     description: string;
     imageUrl: string;
   }[];
-
   about: string[];
   callToAction: {
     text: string;
@@ -50,9 +49,9 @@ export const projectData: Project[] = [
           "Vote on notes to help the best content rise to the top. Discover what others find valuable.",
       },
       {
-        title: "Smart Recommendations",
+        title: "Share",
         description:
-          "Discover notes tailored to your interests. Our algorithm learns what you like and suggests relevant content.",
+          "Share notes with the users and collaborate in a real time",
       },
     ],
     techStack: [

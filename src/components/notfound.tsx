@@ -5,7 +5,7 @@ import { Button } from "./ui/button";
 import { Separator } from "./ui/separator";
 import { Home } from "lucide-react";
 
-export const NotFound = () => {
+export const NotFound = ({ type }: { type: "project" | "work" }) => {
   return (
     <div className="max-w-3xl mx-auto px-4 py-8 text-zinc-600 dark:text-zinc-400">
       <div className="mb-16">
@@ -14,10 +14,10 @@ export const NotFound = () => {
             <span className="text-2xl font-bold text-card-foreground">404</span>
           </div>
           <p className="text-base mb-2">
-            We couldn&apos;t find the project you&apos;re looking for
+            I couldn&apos;t find the {type} you&apos;re looking for
           </p>
           <p className="text-sm text-center max-w-md">
-            The project you requested doesn&apos;t exist or may have been
+            The {type} you requested doesn&apos;t exist or may have been
             removed.
           </p>
         </div>
@@ -29,7 +29,7 @@ export const NotFound = () => {
             Looking for something else?
           </h3>
           <p className="text-sm mb-4">
-            Check out our other projects or return to the home page.
+            Check out my other {type}s or return to the home page.
           </p>
           <Button
             asChild

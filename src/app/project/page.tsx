@@ -15,15 +15,19 @@ const ProjectsPage = async ({
   searchParams: Promise<{ [key: string]: string | undefined }>;
 }) => {
   const params = await searchParams;
-  const projectTitle = params.project as string;
+  const projectTitle = params.title as string;
 
   if (!projectTitle) {
-    return <NotFound />;
+    return <NotFound type="project" />;
   }
 
   const project = projectData.find(
     (p) => p.title.toLowerCase() === projectTitle.toLowerCase()
   );
+
+  if (!project) {
+    return <NotFound type="project" />;
+  }
 
   return (
     <div className="max-w-3xl mx-auto px-4 py-8 text-zinc-600 dark:text-zinc-400">
