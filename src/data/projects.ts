@@ -141,7 +141,7 @@ export const projectData: Project[] = [
         id: 1,
         title: "Peers connections",
         description: "This is how the connected and discovered peers look like",
-        imageUrl: "/assets/droppy/droppy.png",
+        imageUrl: "/assets/droppy/droppy-landing.png",
       },
       {
         id: 2,

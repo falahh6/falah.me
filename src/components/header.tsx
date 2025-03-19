@@ -23,20 +23,14 @@ const Header = () => {
         <div className="text-xs md:text-sm text-muted-foreground">
           I&apos;m a BCA graduate working at an AI-based coaching and mentoring
           SaaS startup. I love building real-world solutions, like{" "}
-          <Link
-            href={"https://droppy.falah.in"}
-            target="_blank"
-            className="group mr-1"
+          <LinkPreview
+            linkTarget="_blank"
+            url="https://droppy.falah.in"
+            className="font-semibold p-0.5 px-1 hover:border-b"
           >
-            <LinkPreview
-              linkTarget="_blank"
-              url="https://droppy.falah.in"
-              className="font-semibold p-0.5 px-1 hover:border-b "
-            >
-              Droppy{"  "}
-            </LinkPreview>
-          </Link>{" "}
-          An apple alternative on browsers for devices on same network.
+            Droppy
+          </LinkPreview>
+          .
         </div>
         <div className="flex flex-row gap-2 items-center pt-2 text-foreground/80">
           <Button

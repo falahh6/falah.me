@@ -109,7 +109,7 @@ export const LinkPreview = ({
         </HoverCardPrimitive.Trigger>
 
         <HoverCardPrimitive.Content
-          className="[transform-origin:var(--radix-hover-card-content-transform-origin)]  z-50"
+          className="[transform-origin:var(--radix-hover-card-content-transform-origin)] z-[999]"
           side="top"
           align="center"
           sideOffset={10}
@@ -129,7 +129,7 @@ export const LinkPreview = ({
                   },
                 }}
                 exit={{ opacity: 0, y: 20, scale: 0.6 }}
-                className="shadow-xl rounded-xl"
+                className="shadow-xl rounded-xl z-[9999]"
                 style={{
                   x: translateX,
                 }}

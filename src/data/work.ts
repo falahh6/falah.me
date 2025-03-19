@@ -21,7 +21,7 @@ export type Company = {
 
 export const workInfo: Company[] = [
   {
-    title: "Coachbots.com",
+    title: "Coachbots",
     description: "Frontend Web Engineer",
     period: "November 2023 - Present",
     about: [

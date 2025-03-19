@@ -27,7 +27,7 @@ const WorkPage = async ({
   }
 
   return (
-    <div className="max-w-3xl mx-auto py-4 text-zinc-600 dark:text-zinc-400">
+    <div className="max-w-3xl mx-auto max-sm:px-6 py-4 text-zinc-600 dark:text-zinc-400 mt-12 ">
       {work && (
         <div>
           <div className="flex flex-col items-center my-8 mb-2">
@@ -58,7 +58,7 @@ const WorkPage = async ({
 
           <div className="mb-8">
             <h2 className="text-base font-semibold mb-4">About</h2>
-            <div className="space-y-3 text-sm">
+            <div className="space-y-3 text-sm max-sm:text-xs">
               {work.about.map((paragraph, index) => (
                 <p key={index}>{paragraph}</p>
               ))}
@@ -70,11 +70,11 @@ const WorkPage = async ({
               <h2 className="text-base font-semibold mb-4">
                 Projects I worked on
               </h2>
-              <div className="space-y-3 text-sm">
+              <div className="space-y-3 text-sm max-sm:text-xs">
                 {work.projects.map((project, index) => (
                   <div key={index} className="space-y-2.5">
-                    <h3 className="text-sm font-medium">{project.title}</h3>
-                    <p className="text-sm">{project.description}</p>
+                    <h3 className="font-medium">{project.title}</h3>
+                    <p>{project.description}</p>
                     <div className="flex flex-wrap gap-2">
                       {project.techStack.map((tech) => (
                         <Badge

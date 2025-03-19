@@ -13,11 +13,12 @@ import {
 } from "@/components/ui/accordion";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
+import Image from "next/image";
 
 export default function Home() {
   return (
-    <MarginWrapper>
-      <div className="sticky top-0">
+    <MarginWrapper className="no-scrollbar">
+      <div className="sticky top-0 mt-14 ">
         <div className="w-[95vw] lg:w-[70vw] xl:w-[60vw] 2xl:w-[40vw] sticky top-0 bg-background">
           <Header />
         </div>
@@ -58,11 +59,23 @@ export default function Home() {
                         </p>
                       </div>
                     </div>
-                    {entry.type === "education" && <School size={16} />}
-                    {entry.type === "work" && <Building2 size={16} />}
-                    {entry.type === "project" && <Briefcase size={16} />}
+                    {entry.logo ? (
+                      <Image
+                        width={20}
+                        height={20}
+                        src={entry.logo}
+                        alt={entry.title}
+                        className="h-6 w-6 rounded-full"
+                      />
+                    ) : (
+                      <>
+                        {entry.type === "education" && <School size={16} />}
+                        {entry.type === "work" && <Building2 size={16} />}
+                        {entry.type === "project" && <Briefcase size={16} />}
+                      </>
+                    )}
                   </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground ps-7 pb-2">
+                  <AccordionContent className="text-muted-foreground ps-7 pb-2 ml-2">
                     <p className="max-sm:text-xs">{entry.details}</p>
                     <div className="py-2">
                       {entry.type === "project" &&

@@ -30,7 +30,7 @@ const ProjectsPage = async ({
   }
 
   return (
-    <div className="max-w-3xl mx-auto py-4 text-zinc-600 dark:text-zinc-400">
+    <div className="max-w-3xl mx-auto max-sm:px-6 py-4 text-zinc-600 dark:text-zinc-400 mt-20">
       {project && (
         <div className="mb-16">
           <div className="flex flex-col items-center mb-8">
@@ -49,7 +49,7 @@ const ProjectsPage = async ({
               )}
             </div>
             <h1 className="text-2xl font-medium mb-1">{project.title}</h1>
-            <p className="text-sm  text-center max-w-md">
+            <p className="text-sm max-sm:text-xs  text-center max-w-md">
               {project.description}
             </p>
           </div>
@@ -98,11 +98,13 @@ const ProjectsPage = async ({
           <div className="mb-8">
             <h2 className="text-base font-semibold mb-4">Highlights</h2>
             {project.highlights.map((highlight, index) => (
-              <div key={index} className="mb-6 text-sm">
+              <div key={index} className="mb-6 text-sm max-sm:text-xs">
                 <div className="flex justify-between items-start mb-2">
                   <span className="font-medium">{highlight.title}</span>
                 </div>
-                <p className="text-sm">{highlight.description}</p>
+                <p className="text-sm max-sm:text-xs">
+                  {highlight.description}
+                </p>
               </div>
             ))}
           </div>
@@ -131,7 +133,7 @@ const ProjectsPage = async ({
 
           <div className="mb-8">
             <h2 className="text-base font-semibold mb-4">About</h2>
-            <div className="space-y-3 text-sm">
+            <div className="space-y-3 text-sm max-sm:text-xs">
               {project.about.map((paragraph, index) => (
                 <p key={index}>{paragraph}</p>
               ))}
@@ -142,7 +144,9 @@ const ProjectsPage = async ({
             <h3 className="text-base font-medium mb-2">
               Ready to get started?
             </h3>
-            <p className="text-sm mb-4">{project.callToAction.text}</p>
+            <p className="text-sm max-sm:text-xs mb-4">
+              {project.callToAction.text}
+            </p>
             <Button
               asChild
               size="sm"

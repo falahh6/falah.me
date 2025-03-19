@@ -5,6 +5,7 @@ export const timelineData: TimelineEntry[] = [
     period: "January 25, 2025",
     title: "Droppy",
     type: "project",
+    logo: "/assets/droppy/droppy.png",
     details:
       "An apple alternative on browser for devices connected to the same internet connection, ranked #11 on Product Hunt, with 1,900+ X impressions.",
     productHuntLink: "https://www.producthunt.com/posts/droppy",
@@ -22,9 +23,10 @@ export const timelineData: TimelineEntry[] = [
   {
     period: "November 2023 - Present",
     title: "Frontend Web Engineer",
+    logo: "/assets/coachbots/coachbots.png",
     details:
       "Sole frontend developer, contributing to 800+ tasks, 300+ PRs, and 700+ commits across three key projects.",
-    institutionCompany: "Coachbots.com",
+    institutionCompany: "Coachbots",
     type: "work",
     subProjects: [
       {
@@ -62,6 +64,7 @@ export const timelineData: TimelineEntry[] = [
   {
     period: "November 2024",
     title: "Noteverse",
+    logo: "https://noteverse.falah.in/noteverse-logo-sm.svg",
     details:
       "A real-time notes app with upvoting, commenting, and personalized recommendations.",
     type: "project",
@@ -85,10 +88,10 @@ export const timelineData: TimelineEntry[] = [
       },
     ],
   },
-
   {
     period: "December 2022 - January 2023",
     title: "Frontend Web Developer Intern",
+    logo: "https://instagram.fblr4-3.fna.fbcdn.net/v/t51.2885-19/481181996_9129374233841436_7470395825067432189_n.jpg?_nc_ht=instagram.fblr4-3.fna.fbcdn.net&_nc_cat=100&_nc_oc=Q6cZ2QFdmRrvV-8eOtZMY1-NNmRzM7cQZgp9bITJIx6pvjzMZzS60_y39pPkBZZgs4yN0NLJJbzsRpqdEKOBkCsM0f9D&_nc_ohc=wE3sqpbTdmYQ7kNvgFQhnTg&_nc_gid=XlOYY0AqqaR0Jdbohm_EBw&edm=AP4sbd4BAAAA&ccb=7-5&oh=00_AYHfFKS-vbrnyqdOAjwR-ZtihabZyOBDX1ZuxtPWc4S6hg&oe=67E07B5C&_nc_sid=7a9f4b",
     details:
       "Documented requirements, converted designs to interactive UIs, and updated websites while learning modern frontend tools.",
     institutionCompany: "AkeefandCo",
