@@ -117,7 +117,7 @@ export const projectData: Project[] = [
     title: "Droppy",
     description:
       "An apple alternative on browser for devices connected to the same internet connection, ranked #11 on Product Hunt, with 1,900+ X impressions.",
-    logo: "/assets/droppy.png",
+    logo: "/assets/droppy/droppy.png",
     socialLinks: {
       github: "https://github.com/falahh6/droppy",
       website: "https://droppy.falah.in",
