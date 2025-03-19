@@ -68,20 +68,11 @@ export function Carousel({ screenshots }: CarouselProps) {
                 height={450}
                 className="w-full h-auto object-cover"
               />
-              {/* <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
-                <h3 className="text-sm font-semibold text-white">
-                  {screenshot.title}
-                </h3>
-                <p className="text-xs text-gray-200">
-                  {screenshot.description}
-                </p>
-              </div> */}
             </div>
           </div>
         ))}
       </div>
 
-      {/* Navigation buttons */}
       <button
         onClick={goToPrevious}
         className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white/80 flex items-center justify-center shadow-sm hover:bg-white transition-colors"
@@ -100,7 +91,6 @@ export function Carousel({ screenshots }: CarouselProps) {
         <ChevronRight className="h-5 w-5 text-gray-700" />
       </button>
 
-      {/* Indicators */}
       <div className="absolute bottom-2 left-0 right-0 flex justify-center gap-1.5">
         {screenshots.map((_, index) => (
           <button

@@ -30,7 +30,7 @@ const ProjectsPage = async ({
   }
 
   return (
-    <div className="max-w-3xl mx-auto px-4 py-8 text-zinc-600 dark:text-zinc-400">
+    <div className="max-w-3xl mx-auto py-4 text-zinc-600 dark:text-zinc-400">
       {project && (
         <div className="mb-16">
           <div className="flex flex-col items-center mb-8">

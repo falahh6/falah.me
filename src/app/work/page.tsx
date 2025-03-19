@@ -27,9 +27,9 @@ const WorkPage = async ({
   }
 
   return (
-    <div className="max-w-3xl mx-auto px-4 py-8 text-zinc-600 dark:text-zinc-400">
+    <div className="max-w-3xl mx-auto py-4 text-zinc-600 dark:text-zinc-400">
       {work && (
-        <div className="mb-16">
+        <div>
           <div className="flex flex-col items-center my-8 mb-2">
             <h1 className="text-2xl font-medium mb-1">{work.title}</h1>
             <p className="text-sm  text-center max-w-md">{work.description}</p>

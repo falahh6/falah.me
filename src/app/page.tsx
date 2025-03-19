@@ -18,7 +18,7 @@ export default function Home() {
   return (
     <MarginWrapper>
       <div className="sticky top-0">
-        <div className="w-[95vw] lg:w-[70vw] xl:w-[60vw] 2xl:w-[40vw] pt-4 sticky top-0 bg-background">
+        <div className="w-[95vw] lg:w-[70vw] xl:w-[60vw] 2xl:w-[40vw] sticky top-0 bg-background">
           <Header />
         </div>
 
