@@ -1,4 +1,5 @@
-import { formatRelativeTime } from "@/lib/utils";
+import { cn, formatRelativeTime } from "@/lib/utils";
+import { RepositoryNode } from "@/types/all";
 import { ArrowRight } from "lucide-react";
 import { useTheme } from "next-themes";
 import Link from "next/link";
@@ -8,26 +9,10 @@ import GitHubCalendar from "react-github-calendar";
 const GITHUB_USERNAME = "falahh6";
 const GITHUB_TOKEN = process.env.NEXT_PUBLIC_GITHUB_TOKEN;
 
-interface CommitNode {
-  message: string;
-  committedDate: string;
-  url: string;
-}
-
-interface RepositoryNode {
-  name: string;
-  defaultBranchRef?: {
-    target?: {
-      history?: {
-        edges: { node: CommitNode }[];
-      };
-    };
-  };
-}
-
-const GitHubActivity: React.FC = () => {
+const GitHubActivity = () => {
   const { theme } = useTheme();
 
+  const [loading, setLoading] = useState(true);
   const [recentCommits, setRecentCommits] = useState<
     { message: string; date: string; repo: string; url: string }[]
   >([]);
@@ -74,7 +59,6 @@ const GitHubActivity: React.FC = () => {
     });
 
     const data = await response.json();
-    console.log("response : ", data);
 
     const repositories: RepositoryNode[] =
       data?.data?.user?.repositories?.nodes || [];
@@ -89,8 +73,7 @@ const GitHubActivity: React.FC = () => {
         })) || []
     );
 
-    console.log("commits : ", commits);
-
+    setLoading(false);
     setRecentCommits(commits);
   };
 
@@ -101,7 +84,13 @@ const GitHubActivity: React.FC = () => {
         and the contribution graph. You can see what I&apos;m currently{" "}
         <span className="font-semibold">working on</span>.
       </p>
-      <div className="w-full p-4 max-sm:p-2 rounded-lg overflow-x-auto">
+
+      <div
+        className={cn(
+          "w-full p-4 max-sm:p-2 rounded-lg overflow-x-auto",
+          loading && "hidden"
+        )}
+      >
         <div className="block md:hidden overflow-x-auto">
           <GitHubCalendar
             username="falahh6"
@@ -122,31 +111,49 @@ const GitHubActivity: React.FC = () => {
           />
         </div>
       </div>
+      <div
+        className={cn(
+          "w-full h-40 bg-accent animate-pulse rounded-lg hidden",
+          loading && "block"
+        )}
+      />
 
-      <h2 className="text-sm font-bold mt-5 mb-3">Recent Commits</h2>
+      <h2 className="text-xs font-semibold my-3">Recent Commits</h2>
+
       <ul className="w-full flex flex-row max-sm:flex-col  flex-wrap gap-4">
-        {recentCommits.slice(0, 6).map((commit, index) => (
-          <li
-            key={index}
-            className="border rounded-md w-fit flex-1 min-w-[250px] max-sm:w-full p-3 text-left flex flex-col gap-1"
-          >
-            <p className="text-xs font-semibold">{commit.repo}</p>
-            <div className="flex flex-row items-baseline gap-2">
-              <p className="text-xs">{commit.message}</p>
-              <p className="text-xs text-foreground/50 min-w-fit">
-                {formatRelativeTime(commit.date)}
-              </p>
-            </div>
-            <Link
-              href={commit.url}
-              target="_blank"
-              className="text-xs mt-auto font-semibold text-blue-500 w-fit flex flex-row items-center gap-1 group"
+        {loading && (
+          <>
+            {Array.from({ length: 6 }).map((_, index) => (
+              <li
+                key={index}
+                className="border h-24 bg-accent rounded-md w-fit flex-1 min-w-[250px] max-sm:w-full p-3 text-left flex flex-col gap-1 animate-pulse"
+              />
+            ))}
+          </>
+        )}
+        {!loading &&
+          recentCommits.slice(0, 6).map((commit, index) => (
+            <li
+              key={index}
+              className="border rounded-md w-fit flex-1 min-w-[250px] max-sm:w-full p-3 text-left flex flex-col gap-1"
             >
-              <span>See changes</span>{" "}
-              <ArrowRight className="h-3 w-3 hidden group-hover:block transition-[display]" />
-            </Link>
-          </li>
-        ))}
+              <p className="text-xs font-semibold">{commit.repo}</p>
+              <div className="flex flex-row items-baseline gap-2">
+                <p className="text-xs">{commit.message}</p>
+                <p className="text-xs text-foreground/50 min-w-fit">
+                  {formatRelativeTime(commit.date)}
+                </p>
+              </div>
+              <Link
+                href={commit.url}
+                target="_blank"
+                className="text-xs mt-auto font-semibold text-blue-500 w-fit flex flex-row items-center gap-1 group"
+              >
+                <span>See changes</span>{" "}
+                <ArrowRight className="h-3 w-3 hidden group-hover:block transition-[display]" />
+              </Link>
+            </li>
+          ))}
       </ul>
     </div>
   );

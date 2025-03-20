@@ -1,23 +1,4 @@
-type Project = {
-  title: string;
-  description: string;
-  techStack: string[];
-  screenshots: {
-    id: number;
-    title: string;
-    description: string;
-    imageUrl: string;
-  }[];
-};
-
-export type Company = {
-  title: string;
-  description: string;
-  period: string;
-  about: string[];
-  projects: Project[];
-  techStack: string[];
-};
+import { Company } from "@/types/all";
 
 export const workInfo: Company[] = [
   {

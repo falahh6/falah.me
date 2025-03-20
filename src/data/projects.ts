@@ -1,31 +1,4 @@
-export type Project = {
-  title: string;
-  description: string;
-  logo: string;
-  socialLinks: {
-    github: string;
-    website: string;
-    producthunt?: string;
-  };
-  highlights: {
-    title: string;
-    description: string;
-  }[];
-  techStack: string[];
-  slidesData: {
-    id: number;
-    title: string;
-    description: string;
-    imageUrl: string;
-  }[];
-  about: string[];
-  callToAction: {
-    text: string;
-    buttonText: string;
-    buttonLink: string;
-  };
-  footer: string;
-};
+import { Project } from "@/types/all";
 
 export const projectData: Project[] = [
   {
