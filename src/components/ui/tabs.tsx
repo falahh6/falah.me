@@ -1,9 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { ClassNameValue } from "tailwind-merge";
+import { useHash } from "@/hooks/hash";
 
 type Tab = {
   title: string;
@@ -23,12 +24,28 @@ export const Tabs = ({
   tabClassName?: ClassNameValue;
   contentClassName?: ClassNameValue;
 }) => {
-  const [active, setActive] = useState<Tab>(propTabs[0]);
+  const [active, setActive] = useState<Tab | null>(null);
   const setTabs = useState<Tab[]>(propTabs)[1];
+
+  const { setHash, hash } = useHash();
+
+  useEffect(() => {
+    if (hash) {
+      const tab = propTabs.find(
+        (tab) => tab.title.toLowerCase() === hash.replace("#", "")
+      );
+      if (tab) {
+        setActive(tab);
+      }
+    }
+  }, [hash]);
 
   const moveSelectedTabToTop = (idx: number) => {
     const newTabs = [...propTabs];
     const selectedTab = newTabs.splice(idx, 1);
+
+    setHash(selectedTab[0].title.toLowerCase());
+
     newTabs.unshift(selectedTab[0]);
     setTabs(newTabs);
     setActive(newTabs[0]);
@@ -61,7 +78,7 @@ export const Tabs = ({
               transformStyle: "preserve-3d",
             }}
           >
-            {active.value === tab.value && (
+            {active && active.value === tab.value && (
               <motion.div
                 layoutId="clickedbutton"
                 transition={{ type: "spring", bounce: 0.3, duration: 0.6 }}
@@ -72,19 +89,12 @@ export const Tabs = ({
               />
             )}
 
-            <span className="relative block text-black dark:text-white text-sm">
+            <span className="relative block text-black dark:text-white text-xs font-semibold">
               {tab.title}
             </span>
           </button>
         ))}
       </div>
-      {/* <FadeInDiv
-        tabs={tabs}
-        active={active}
-        key={active.value}
-        hovering={hovering}
-        className={cn("mt-32", contentClassName)}
-      /> */}
     </>
   );
 };

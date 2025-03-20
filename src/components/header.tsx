@@ -7,7 +7,7 @@ import { Dot, FileText } from "lucide-react";
 const Header = () => {
   return (
     <header className="w-full flex flex-row gap-8 lg:p-4 lg:pt-0 max-sm:px-2">
-      <div className="border min-w-[120px] border-zinc-200 dark:border-zinc-700 bg-white dark:bg-black rounded-xl p-2 shadow-2xl h-fit hover:-translate-y-1 transition-all">
+      <div className="border min-w-[120px] border-zinc-200 dark:border-zinc-700 bg-white dark:bg-black rounded-xl p-2 shadow-sm h-fit hover:-translate-y-1 transition-all">
         <Image
           src={"/falah.jpeg"}
           height={120}
