@@ -234,7 +234,7 @@ const Contact = () => {
             <>
               {success && (
                 <div className="w-full bg-green-100 text-green-500 border border-green-300 dark:border-green-300/50 dark:bg-green-900/50 p-2 rounded-lg text-xs font-semibold">
-                  Thanks for reaching out, I&pos;ll get back to you soon!
+                  Thanks for reaching out, I&apos;ll get back to you soon!
                 </div>
               )}
             </>
