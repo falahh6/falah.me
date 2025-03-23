@@ -79,7 +79,7 @@ const GitHubActivity = () => {
 
   return (
     <div className="p-4 mx-auto flex flex-col gap-4 justify-start items-start w-full max-w-4xl">
-      <p className="text-sm sm:text-xs text-left pb-2 w-full">
+      <p className="text-sm max-sm:text-xs text-left pb-2 w-full">
         This is the activity on my GitHub profile. It shows the recent commits
         and the contribution graph. You can see what I&apos;m currently{" "}
         <span className="font-semibold">working on</span>.

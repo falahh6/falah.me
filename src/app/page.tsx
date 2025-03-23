@@ -9,6 +9,7 @@ import { useHash } from "@/hooks/hash";
 import { useEffect } from "react";
 import { cn } from "@/lib/utils";
 import Highlights from "@/components/highlights";
+import Contact from "@/components/contact";
 
 export default function Home() {
   const { hash, setHash } = useHash();
@@ -21,14 +22,14 @@ export default function Home() {
 
   return (
     <MarginWrapper className="no-scrollbar">
-      <div className="mt-14">
-        <div className="bg-background z-50 w-full sticky top-[4.5rem] ">
+      <div className="mt-14 ">
+        <div className="bg-background z-50 w-full sticky top-[4.5rem] max-sm:px-10 ">
           <div className="w-[95vw] lg:w-[70vw] xl:w-[60vw] 2xl:w-[40vw] ">
             <Header />
           </div>
         </div>
 
-        <div className="w-[90vw] lg:w-[70vw] xl:w-[60vw] 2xl:w-[40vw] flex flex-col items-start justify-start pt-4">
+        <div className="w-full max-sm:px-10 lg:w-[70vw] xl:w-[60vw] 2xl:w-[40vw] flex flex-col items-start justify-start pt-4">
           <div className="py-2 text-xs font-semibold">
             <Tabs
               containerClassName="w-full"
@@ -36,7 +37,7 @@ export default function Home() {
               tabs={[
                 { title: "Highlights", value: "0" },
                 { title: "Activity", value: "1" },
-                // { title: "Contact", value: "3" },
+                { title: "Contact", value: "3" },
               ]}
             />
           </div>
@@ -44,6 +45,7 @@ export default function Home() {
           <div className={cn(!hash?.includes("activity") && "hidden")}>
             <GitHubActivity />
           </div>
+          {hash?.includes("contact") && <Contact />}
         </div>
       </div>
     </MarginWrapper>
