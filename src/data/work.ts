@@ -1,4 +1,4 @@
-import { Company } from "@/types/all";
+import { Company } from "@/types";
 
 export const workInfo: Company[] = [
   {

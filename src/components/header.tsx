@@ -20,8 +20,8 @@ const Header = () => {
         <h1 className="text-xl font-semibold">Mohammed Falah</h1>
         <h3 className="text-sm font-semibold">Frontend Engineer</h3>
         <div className="text-xs md:text-sm text-muted-foreground">
-          I&apos;m a BCA graduate working at an AI-based coaching and mentoring
-          SaaS startup. I love building real-world solutions, like{" "}
+          I&apos;m a BCA graduate working as a Frontend Engineer. I love
+          building real-world solutions, like{" "}
           <Link
             href={"https://droppy.falah.in"}
             target="_blank"
@@ -75,7 +75,12 @@ const Header = () => {
             size={"sm"}
             asChild
           >
-            <Link href={"https://github.com/falahh6"} target="_blank">
+            <Link
+              href={
+                "https://drive.google.com/file/d/1nfU3mTly8Ev0iBaX0DeH0PWJdnZx2p0s/view?usp=sharing"
+              }
+              target="_blank"
+            >
               <FileText
                 style={{
                   height: "12px",

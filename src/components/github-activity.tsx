@@ -1,5 +1,5 @@
 import { cn, formatRelativeTime } from "@/lib/utils";
-import { RepositoryNode } from "@/types/all";
+import { RepositoryNode } from "@/types";
 import { ArrowRight } from "lucide-react";
 import { useTheme } from "next-themes";
 import Link from "next/link";

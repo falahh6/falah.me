@@ -1,6 +1,15 @@
-import { TimelineEntry } from "../types/all";
+import { TimelineEntry } from "../types";
 
 export const timelineData: TimelineEntry[] = [
+  {
+    period: "April 2025 - Present",
+    title: "Frontend Engineer",
+    logo: "/assets/yourtoken/logo.jpeg",
+    details: "",
+    institutionCompany: "YourToken",
+    type: "work",
+    subProjects: [],
+  },
   {
     period: "January 25, 2025",
     title: "Droppy",
@@ -21,7 +30,7 @@ export const timelineData: TimelineEntry[] = [
     ],
   },
   {
-    period: "November 2023 - Present",
+    period: "November 2023 - March 2025",
     title: "Frontend Web Engineer",
     logo: "/assets/coachbots/coachbots.png",
     details:

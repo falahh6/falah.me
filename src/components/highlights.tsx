@@ -94,24 +94,22 @@ const Highlights = () => {
                 layout
               >
                 <p className="max-sm:text-xs">{entry.details}</p>
-                <div className="py-2">
-                  {entry.type === "project" && entry.subProjects.length > 0 && (
-                    <Link href={`/project?title=${entry.title}`}>
+                {entry.subProjects.length > 0 && (
+                  <div className="py-2">
+                    <Link
+                      href={
+                        entry.type === "project"
+                          ? `/project?title=${entry.title}`
+                          : `/work?company=${entry.institutionCompany}`
+                      }
+                    >
                       <p className="text-xs group font-semibold flex w-fit flex-row items-center justify-between gap-2 hover:text-foreground/60 hover:cursor-pointer">
                         <span>Read more</span>
                         <ArrowRight className="h-4 w-4 transition-all group-hover:translate-x-1" />
                       </p>
                     </Link>
-                  )}
-                  {entry.type === "work" && (
-                    <Link href={`/work?company=${entry.institutionCompany}`}>
-                      <p className="text-xs group font-semibold flex w-fit flex-row items-center justify-between gap-2 hover:text-foreground/60 hover:cursor-pointer">
-                        <span>Read more</span>
-                        <ArrowRight className="h-4 w-4 transition-all group-hover:translate-x-1" />
-                      </p>
-                    </Link>
-                  )}
-                </div>
+                  </div>
+                )}
               </motion.div>
             </AccordionContent>
           </AccordionItem>
