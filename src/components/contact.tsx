@@ -133,15 +133,18 @@ const Contact = () => {
             className="text-xs h-fit p-1 group hover:shadow "
             variant={"secondary"}
             size={"sm"}
+            asChild
           >
-            <PhoneCall
-              style={{
-                height: "12px",
-                width: "12px",
-              }}
-              className="h-3 w-3 group-hover:animate-pulse"
-            />
-            <span className="hidden md:block">+91 9148747200</span>
+            <Link href={"tel:+919148747200"}>
+              <PhoneCall
+                style={{
+                  height: "12px",
+                  width: "12px",
+                }}
+                className="h-3 w-3 group-hover:animate-pulse"
+              />
+              <span className="hidden md:block">+91 9148747200</span>
+            </Link>
           </Button>{" "}
           or use the form below.
         </p>
